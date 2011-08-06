@@ -20,3 +20,7 @@ following lines:
 
 Altenatively, if you did not save `profeta-mode.el` into one of the directories listed 
 in `load-path`, replace "profeta-mode.el" with the full pathname.
+
+Dependencies
+------------
+`profeta-mode` relies on `python-mode`.

@@ -23,7 +23,8 @@
 	( "+[~]?[a-zA-Z_][a-zA-Z0-9_]*" . font-lock-type-face )
 	
 	;; some reserved words
-	( ,(regexp-opt '("def " "from " "import " "declare_episode")) . font-lock-preprocessor-face )
+	( ,(regexp-opt '("def " "from " "import " "declare_episode")) . 
+	  font-lock-preprocessor-face )
 	
 	;; the '>>' symbol
 	( ,(regexp-opt '(">>") 'word) . font-lock-builtin-face)
@@ -33,16 +34,16 @@
 	)
       )
 
-;; add command shortcut for comments
+(defvar profeta-mode-map nil "Keymap for profeta-mode")
+
+;; command shortcut for comments
+(when (not profeta-mode)
+  ;; assign your keyboard shortcuts
+  (setq profeta-mode-map (make-sparse-keymap))
+  (define-key profeta-mode-map (kbd "C-c C-c") 'comment-region)
+  )
 
 ;; define profeta-mode
 (define-derived-mode profeta-mode python-mode "Profeta Strategy"
   (setq font-lock-defaults '(my-keywords))
-  
-  ;; ;; modify the keymap
-  ;; (define-key profeta-mode-map [remap comment-dwim] 'profeta-comment-dwim)
-  
-  ;; ;; python style comment: “# ...”
-  ;; (modify-syntax-entry ?# "< b" profeta-mode-syntax-table)
-  ;; (modify-syntax-entry ?\n "> b" profeta-mode-syntax-table)
   )

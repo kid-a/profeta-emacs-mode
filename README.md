@@ -21,6 +21,19 @@ following lines:
 Altenatively, if you did not save `profeta-mode.el` into one of the directories listed 
 in `load-path`, replace "profeta-mode.el" with the full pathname.
 
+... Automatically use profeta mode when opening ...
+
 Dependencies
 ------------
-`profeta-mode` relies on `python-mode`.
+`profeta-mode` relies on `python-mode`. Make sure you have it installed on your system.
+
+Release History
+---------------
+`r0.2`
+
+* added support for `declare_episode`
+* code cleaning
+
+`r0.1` 
+
+* first release
